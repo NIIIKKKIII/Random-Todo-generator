@@ -1,5 +1,6 @@
+// In react we usually use import and not require
 import express from "express";
-import cors from "cors"; 
+import cors from "cors";   // for cross origin requests
 import { Todos } from "./data.js";
 
 const app = express();
@@ -8,9 +9,9 @@ const app = express();
 app.use(cors());
 
 app.get("/todo", (req, res) => {
-  const randomIndex = Math.floor(Math.random() * Todos.length);
+  const randomIndex = Math.floor(Math.random() * Todos.length);  
   const randomTodo = Todos[randomIndex];
-  res.json({ todo: randomTodo }); 
+  res.json({ todo: randomTodo });   // single object as we want to give a single todo and not all
 });
 
 app.listen(3001, () => {
