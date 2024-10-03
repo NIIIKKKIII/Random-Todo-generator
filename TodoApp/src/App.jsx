@@ -4,12 +4,12 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:3001/todo") 
+    fetch("http://localhost:3001/todo")   // We can also use axios in this as it is much cleaner syntax
       .then(async (res) => {
         const json = await res.json();
         setTodos([json.todo]); 
       })
-  }, []);
+  }, []);    // [] is the dependency array which takes in any input and runs the useEffect if the value of the dependency array changes, if it does not or is blank, then it only runs once when the app starts 
 
   return (
     <div>
@@ -20,7 +20,7 @@ function App() {
   );
 }
 
-function Todo({ title, description }) {
+function Todo({ title, description }) { // our Componen
   return (
     <div>
       <h1>{title}</h1>
