@@ -1,4 +1,6 @@
-export const Todos = [{
+// Data of the todos which are shown
+
+export const Todos = [{        
 key: 1,
 title: "Gym",
 description: "Go to the gym at 6 AM"
